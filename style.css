@@ -137,7 +137,7 @@ nav {
 .nav-links a {
   display: block;
   padding: 0.5rem 0rem;
-  text-align: center;
+  text-align: right;
 }
 
 .burger {
@@ -206,6 +206,44 @@ nav {
   object-position: center;
   opacity: 0;
   transition: opacity 1s ease-in-out;
+}
+
+.slides-info {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 20px;
+  right: calc(10% + 45px);
+  z-index: 5;
+  background-color: rgb(0, 0, 0, 0.35);
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+.slides-info img {
+  width: 24px;
+  height: 24px;
+}
+
+.slides-info h5 {
+  margin: 0px 5px;
+  white-space: nowrap;
+}
+
+.follow-me {
+  position: absolute;
+  top: 20px;
+  right: 10%;
+  z-index: 5;
+  max-height: 40px;
+  background-color: rgb(0, 0, 0, 0.35);
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+.follow-me img {
+  width: 24px;
+  height: 24px;
 }
 
 .visible {
@@ -436,6 +474,10 @@ textarea {
 
 /* MOBILE */
 @media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
   nav {
     width: 95%;
   }
@@ -461,6 +503,7 @@ textarea {
 
   .nav-links a {
     padding: 3rem 0rem;
+    text-align: center;
   }
 
   .burger {
@@ -490,6 +533,18 @@ textarea {
 
   .wrapper {
     width: 95%;
+  }
+
+  .about-me p {
+    font-size: 1.2rem;
+  }
+
+  .slides-info {
+    right: calc(2.5% + 45px);
+  }
+
+  .follow-me {
+    right: 2.5%;
   }
 }
 

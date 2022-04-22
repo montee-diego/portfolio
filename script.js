@@ -3,6 +3,7 @@ const nav = document.querySelector(".nav-links");
 const navLinks = document.querySelectorAll(".nav-links li");
 const slideImages = document.querySelectorAll(".slide-img");
 const slideDots = document.querySelectorAll(".dot");
+const slideInfo = document.querySelector(".location");
 const contactForm = document.querySelector("#contact-form");
 const submitBtn = document.querySelector(".submit-btn");
 const submitMsg = document.querySelector(".submit-message");
@@ -64,6 +65,7 @@ async function handleSubmit(event) {
 // Image Slider
 let slideIndex = 0;
 let slideTimer = null;
+let slideLocation = ["Bergen, Norway", "Copenhagen, Denmark", "London, UK", "Windsor, UK", "Stockholm, Sweden"];
 
 slideDots.forEach(dot => {
   dot.addEventListener("click", slideImageByIndex);
@@ -83,6 +85,7 @@ function slideImage() {
     if (slideIndex === index) {
       slideImage.classList.add("visible");
       slideDots[index].classList.add("active");
+      slideInfo.innerText = slideLocation[index];
     } else {
       slideImage.classList.remove("visible");
       slideDots[index].classList.remove("active");
