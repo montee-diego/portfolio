@@ -1,7 +1,8 @@
 const burger = document.querySelector(".burger");
 const nav = document.querySelector(".nav-links");
 const navLinks = document.querySelectorAll(".nav-links li");
-const images = document.querySelectorAll(".slide-img");
+const slideImages = document.querySelectorAll(".slide-img");
+const slideDots = document.querySelectorAll(".dot");
 const contactForm = document.querySelector("#contact-form");
 const submitBtn = document.querySelector(".submit-btn");
 const submitMsg = document.querySelector(".submit-message");
@@ -61,24 +62,40 @@ async function handleSubmit(event) {
 }
 
 // Image Slider
-let curIndex = 0;
+let slideIndex = 0;
+let slideTimer = null;
+
+slideDots.forEach(dot => {
+  dot.addEventListener("click", slideImageByIndex);
+});
+
+function slideImageByIndex(e) {
+  if (slideTimer) {
+    window.clearTimeout(slideTimer);
+  }
+
+  slideIndex = e.target.dataset.index - 1;
+  slideImage();
+}
 
 function slideImage() {
-  images.forEach((image, index) => {
-    if (curIndex === index) {
-      image.classList.add("visible");
+  slideImages.forEach((slideImage, index) => {
+    if (slideIndex === index) {
+      slideImage.classList.add("visible");
+      slideDots[index].classList.add("active");
     } else {
-      image.classList.remove("visible");
+      slideImage.classList.remove("visible");
+      slideDots[index].classList.remove("active");
     }
   });
 
-  if (curIndex === images.length - 1) {
-    curIndex = 0;
+  if (slideIndex === slideImages.length - 1) {
+    slideIndex = 0;
   } else {
-    curIndex++;
+    slideIndex++;
   }
 
-  window.setTimeout(() => {
+  slideTimer = window.setTimeout(() => {
     slideImage();
   }, 10000);
 }
