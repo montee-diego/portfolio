@@ -46,7 +46,8 @@ h1 {
 
 h2 {
   display: inline-block;
-  font-size: 1rem;
+  font-family: "Fira Code", monospace;
+  font-size: 1.2rem;
   font-weight: 700;
   padding-bottom: 2px;
   color: #68759e;
@@ -56,7 +57,8 @@ h2 {
 h4 {
   font-size: 1rem;
   font-weight: 400;
-  color: #8f8f8f;
+  margin-top: 0.2rem;
+  color: #7f9fb3;
 }
 
 small {
@@ -157,11 +159,14 @@ nav {
 .wrapper {
   width: 80%;
   margin: auto;
+  padding: 2rem 0rem;
   z-index: 5;
 }
 
-.title {
-  margin-top: 2rem;
+.card {
+  background-color: #17242c;
+  border-radius: 3px;
+  box-shadow: 0px 5px 10px rgb(0, 0, 0, 0.25);
 }
 
 /* Home */
@@ -269,23 +274,20 @@ nav {
 
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 2rem;
   margin: 2rem 0rem;
 }
 
-.card {
+.skill {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-color: #17242c;
-  border-radius: 3px;
-  box-shadow: 0px 5px 10px rgb(0, 0, 0, 0.25);
+  padding: 0.3rem;
 }
 
 .skill img {
   width: 3rem;
-  margin: 3px 5px;
   user-select: none;
 }
 
@@ -299,43 +301,28 @@ nav {
   background-color: #0f1a20;
 }
 
-.content {
+.project {
   display: flex;
   flex-direction: column;
-  margin: 0.7rem;
-  white-space: nowrap;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem;
 }
 
 .content img {
   width: 100%;
-  height: 100%;
   object-fit: cover;
   object-position: center;
-  border: 3px solid #efefef;
+  border: 2px solid rgba(255, 255, 255, 1);
   border-radius: 3px;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
 }
 
-.content a {
-  padding: 0.5rem 2rem;
-  margin-top: 0.5rem;
-  background-color: #1f303b;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-  align-self: flex-end;
-  transition: background-color 0.5s ease-in-out;
-}
-
-.content a:hover {
-  background-color: #294253;
-}
-
 .tags {
   display: flex;
   flex-wrap: wrap;
-  height: 54px;
+  gap: 0.3rem;
 }
 
 .tags li {
@@ -349,7 +336,7 @@ nav {
   height: 24px;
   line-height: 24px;
   padding: 0px 7px 0px 5px;
-  margin-right: 15px;
+  margin-right: 10px;
 }
 
 .tags li::before {
@@ -375,6 +362,27 @@ nav {
   height: 4px;
   border-radius: 50%;
   background-color: #bcd4e4;
+}
+
+.project-link {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.project-link a {
+  padding: 0.5rem 0rem;
+  width: 5rem;
+  background-color: #1f303b;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.project-link a:hover {
+  background-color: #294253;
 }
 
 /* CONTACT */
